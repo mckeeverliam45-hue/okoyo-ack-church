@@ -1,0 +1,8 @@
+{
+  "name": "okoyo-ack-church",
+  "version": "1.0.0",
+  "description": "Official-style website starter for ACK Okoyo Church, Seme Constituency, Kisumu County.",
+  "main": "server.js",
+  "scripts": {"start": "node server.js", "dev": "node server.js"},
+  "dependencies": {"better-sqlite3": "^11.10.0", "express": "^5.1.0", "multer": "^2.0.2"}
+}
