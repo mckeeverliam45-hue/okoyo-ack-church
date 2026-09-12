@@ -1,13 +1,48 @@
 const Database = require('better-sqlite3');
 const db = new Database('okoyo.db');
 db.pragma('journal_mode = WAL');
+
 db.exec(`
 CREATE TABLE IF NOT EXISTS content (key TEXT PRIMARY KEY, value TEXT NOT NULL);
-CREATE TABLE IF NOT EXISTS services (id INTEGER PRIMARY KEY AUTOINCREMENT, service_date TEXT, title TEXT, time TEXT, minister TEXT, items TEXT, published INTEGER DEFAULT 1);
-CREATE TABLE IF NOT EXISTS gallery (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, caption TEXT, image TEXT, created_at TEXT DEFAULT CURRENT_TIMESTAMP);
-CREATE TABLE IF NOT EXISTS messages (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT, phone TEXT, message TEXT, created_at TEXT DEFAULT CURRENT_TIMESTAMP);
-CREATE TABLE IF NOT EXISTS giving (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, phone TEXT, amount REAL, purpose TEXT, reference TEXT, created_at TEXT DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS services (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  service_date TEXT,
+  title TEXT,
+  time TEXT,
+  minister TEXT,
+  items TEXT,
+  published INTEGER DEFAULT 1
+);
+CREATE TABLE IF NOT EXISTS gallery (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT,
+  caption TEXT,
+  image TEXT,
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS messages (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT,
+  email TEXT,
+  phone TEXT,
+  message TEXT,
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS giving (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT,
+  phone TEXT,
+  amount REAL,
+  purpose TEXT,
+  reference TEXT,
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
 `);
+
+// Add the new columns without breaking an existing database.
+try { db.exec(`ALTER TABLE services ADD COLUMN readings TEXT DEFAULT ''`); } catch (e) {}
+try { db.exec(`ALTER TABLE services ADD COLUMN ministers TEXT DEFAULT ''`); } catch (e) {}
+
 const seed = db.prepare('INSERT OR IGNORE INTO content (key,value) VALUES (?,?)');
 [
  ['hero_title','WELCOME TO ACK OKOYO CHURCH'],
@@ -18,8 +53,20 @@ const seed = db.prepare('INSERT OR IGNORE INTO content (key,value) VALUES (?,?)'
  ['pastor','Church leadership details can be updated from the administration dashboard.'],
  ['youtube',process.env.YOUTUBE_URL || 'https://www.youtube.com/']
 ].forEach(x=>seed.run(x));
+
 const count = db.prepare('SELECT COUNT(*) c FROM services').get().c;
-if(!count){ db.prepare(`INSERT INTO services (service_date,title,time,minister,items) VALUES (?,?,?,?,?)`).run(new Date().toISOString().slice(0,10),'Sunday Worship Service','8:00 AM – 11:00 AM','Church Minister','Opening & praise\nBible readings\nSermon / teaching\nPrayers\nHoly Communion (as scheduled)\nAnnouncements\nOffering & thanksgiving\nBenediction'); }
+if(!count){
+  db.prepare(`INSERT INTO services (service_date,title,time,minister,readings,ministers,items) VALUES (?,?,?,?,?,?,?)`).run(
+    new Date().toISOString().slice(0,10),
+    'Sunday Worship Service',
+    '8:00 AM – 11:00 AM',
+    'Church Minister',
+    JSON.stringify({old_testament:'',psalm:'',epistle:'',gospel:''}),
+    JSON.stringify({presiding:'',preacher:'Church Minister',reader:''}),
+    'Opening & praise\nBible readings\nSermon / teaching\nPrayers\nHoly Communion (as scheduled)\nAnnouncements\nOffering & thanksgiving\nBenediction'
+  );
+}
+
 const gcount=db.prepare('SELECT COUNT(*) c FROM gallery').get().c;
 if(!gcount){
  const ins=db.prepare('INSERT INTO gallery(title,caption,image) VALUES (?,?,?)');
