@@ -8,17 +8,17 @@
           content="width=device-width, initial-scale=1.0">
 
     <title>
-        ACK Okoyo Church | Oluti Village, Seme, Kisumu
+        ACK Okoyo Church | Anglican Church in Oluti Village, Seme, Kisumu, Kenya
     </title>
 
     <meta
         name="description"
-        content="Official website of ACK Okoyo Church in Oluti Village, Seme Constituency, Kisumu County, Kenya. Discover our church history, order of service, ministries, events, gallery, sermons and giving information."
+        content="Official website of ACK Okoyo Church in Oluti Village, Seme Constituency, Kisumu County, Kenya. Explore our worship services, ministries, events, prayer initiatives, church history, and spiritual community under the Diocese of Maseno South."
     >
 
     <meta
         name="keywords"
-        content="ACK Okoyo Church, Okoyo ACK Church, ACK Church Kisumu, ACK churches Kisumu, Anglican Church Kisumu, Oluti Village Church, Seme Constituency Church, Maseno South Diocese, churches in Seme, churches in Kisumu County"
+        content="ACK Okoyo Church, Okoyo ACK Church, ACK Church Kisumu, ACK churches Kisumu, Anglican Church Kisumu, Oluti Village Church, Seme Constituency Church, Maseno South Diocese, churches in Kisumu, Anglican churches Kenya"
     >
 
     <meta
@@ -41,10 +41,10 @@
         content="#172554"
     >
 
-    <!-- EXISTING CANONICAL LINK - PRESERVED -->
+    <!-- CANONICAL LINK - UPDATE WITH YOUR LIVE DOMAIN -->
     <link
         rel="canonical"
-        href="https://YOUR-SITE.onrender.com/"
+        href="https://okoyochurch.example.com/"
     >
 
     <!-- Open Graph / Facebook / WhatsApp -->
@@ -55,23 +55,33 @@
     >
 
     <meta
+        property="og:site_name"
+        content="ACK Okoyo Church"
+    >
+
+    <meta
         property="og:title"
-        content="ACK Okoyo Church | Kisumu County"
+        content="ACK Okoyo Church | Anglican Church in Oluti Village, Seme, Kisumu"
     >
 
     <meta
         property="og:description"
-        content="ACK Okoyo Church in Oluti Village, Seme Constituency, Kisumu County, under the Diocese of Maseno South."
+        content="ACK Okoyo Church in Oluti Village, Seme Constituency, Kisumu County, under the Diocese of Maseno South. Join us for worship, ministry, and community."
     >
 
     <meta
         property="og:url"
-        content="https://YOUR-SITE.onrender.com/"
+        content="https://okoyochurch.example.com/"
     >
 
     <meta
         property="og:image"
-        content="https://YOUR-SITE.onrender.com/assets/church-service.jpg"
+        content="https://okoyochurch.example.com/assets/church-service.jpg"
+    >
+
+    <meta
+        property="og:image:alt"
+        content="ACK Okoyo Church worship service"
     >
 
     <!-- Twitter / X -->
@@ -82,8 +92,13 @@
     >
 
     <meta
+        name="twitter:site"
+        content="@ACKOkoyoChurch"
+    >
+
+    <meta
         name="twitter:title"
-        content="ACK Okoyo Church | Kisumu"
+        content="ACK Okoyo Church | Kisumu, Kenya"
     >
 
     <meta
@@ -93,38 +108,52 @@
 
     <meta
         name="twitter:image"
-        content="https://YOUR-SITE.onrender.com/assets/church-service.jpg"
+        content="https://okoyochurch.example.com/assets/church-service.jpg"
     >
 
-    <!-- Church structured data -->
+    <!-- Church structured data with extended information -->
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Church",
-
         "name": "ACK Okoyo Church",
-
         "alternateName": [
             "Okoyo ACK Church",
-            "ACK Okoyo"
+            "ACK Okoyo",
+            "Anglican Church Okoyo"
         ],
-
         "description": "ACK Okoyo Church is an Anglican Church located in Oluti Village, Seme Constituency, Kisumu County, Kenya, under the Diocese of Maseno South.",
-
-        "url": "https://YOUR-SITE.onrender.com/",
-
+        "url": "https://okoyochurch.example.com/",
         "address": {
             "@type": "PostalAddress",
+            "streetAddress": "Oluti Village",
             "addressLocality": "Oluti Village",
             "addressRegion": "Kisumu County",
+            "postalCode": "40100",
             "addressCountry": "KE"
         },
-
+        "telephone": "+254-XXX-XXXXX",
+        "email": "contact@okoyochurch.example.com",
         "parentOrganization": {
             "@type": "Organization",
             "name": "Anglican Church of Kenya"
-        }
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "-0.5",
+            "longitude": "34.5"
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "09:00",
+            "closes": "11:30"
+        },
+        "sameAs": [
+            "https://www.facebook.com/ACKOkoyoChurch",
+            "https://www.youtube.com/@ACKOkoyoChurch"
+        ]
     }
     </script>
 
@@ -139,6 +168,22 @@
          ===================================================== -->
 
     <style>
+
+        /* ------------------------------
+           ACCESSIBILITY: REDUCED MOTION
+        ------------------------------ */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
 
         /* ------------------------------
            CREATIVE PAGE VARIABLES
@@ -259,6 +304,7 @@
             font-size: 35px;
             animation: floatCross 6s ease-in-out infinite;
             pointer-events: none;
+            aria-hidden: "true";
         }
 
         .cross-one {
@@ -470,6 +516,7 @@
             min-height: 280px;
             object-fit: cover;
             transition: transform .7s ease;
+            loading: lazy;
         }
 
         .moment-card:hover img {
@@ -540,6 +587,7 @@
             border-radius: 50%;
             background: #eff6ff;
             font-size: 28px;
+            aria-hidden: "true";
         }
 
         .pillar h3 {
@@ -578,6 +626,7 @@
             top: 50%;
             transform: translate(-50%,-50%);
             opacity: .04;
+            aria-hidden: "true";
         }
 
         .scripture-icon {
@@ -677,6 +726,7 @@
         .prayer-icon-large {
             font-size: 60px;
             color: #fbbf24;
+            aria-hidden: "true";
         }
 
         .prayer-side {
@@ -740,6 +790,7 @@
             border-radius: 16px;
             background: #eff6ff;
             font-size: 27px;
+            aria-hidden: "true";
         }
 
         .event-card h3 {
@@ -770,6 +821,7 @@
             object-fit: cover;
             filter: saturate(.85);
             transition: .5s ease;
+            loading: lazy;
         }
 
         .photo-strip img:hover {
@@ -788,6 +840,7 @@
                 transform .4s ease,
                 filter .4s ease,
                 box-shadow .4s ease;
+            loading: lazy;
         }
 
         .gallery img:hover {
@@ -813,6 +866,7 @@
             top: 10%;
             font-size: 170px;
             color: rgba(30,58,138,.04);
+            aria-hidden: "true";
         }
 
 
@@ -880,6 +934,7 @@
             background: rgba(255,255,255,.04);
             top: -120px;
             left: 10%;
+            aria-hidden: "true";
         }
 
 
@@ -990,1629 +1045,10 @@
      NEW MOVING CHURCH MARQUEE
      ===================================================== -->
 
-<div class="church-marquee">
+<div class="church-marquee" role="status" aria-live="polite" aria-label="Announcements">
 
     <div class="marquee-track">
 
         <div class="marquee-item">
             <span>✝</span> Welcome to ACK Okoyo Church
         </div>
-
-        <div class="marquee-item">
-            <span>🙏</span> Worship • Fellowship • Service
-        </div>
-
-        <div class="marquee-item">
-            <span>📖</span> Growing Together in Christ
-        </div>
-
-        <div class="marquee-item">
-            <span>❤️</span> Serving God and Community
-        </div>
-
-        <div class="marquee-item">
-            <span>⛪</span> Maseno South Diocese
-        </div>
-
-        <div class="marquee-item">
-            <span>🕊️</span> A Christ-Centred Family
-        </div>
-
-        <!-- DUPLICATE FOR CONTINUOUS MARQUEE -->
-
-        <div class="marquee-item">
-            <span>✝</span> Welcome to ACK Okoyo Church
-        </div>
-
-        <div class="marquee-item">
-            <span>🙏</span> Worship • Fellowship • Service
-        </div>
-
-        <div class="marquee-item">
-            <span>📖</span> Growing Together in Christ
-        </div>
-
-        <div class="marquee-item">
-            <span>❤️</span> Serving God and Community
-        </div>
-
-        <div class="marquee-item">
-            <span>⛪</span> Maseno South Diocese
-        </div>
-
-        <div class="marquee-item">
-            <span>🕊️</span> A Christ-Centred Family
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     EXISTING NAVIGATION - PRESERVED
-     ===================================================== -->
-
-<header class="nav">
-
-    <a class="brand" href="#home">
-
-        <span class="cross">✝</span>
-
-        <span>
-            <b>ACK OKOYO</b>
-            <small>CHURCH</small>
-        </span>
-
-    </a>
-
-
-    <button class="menu" aria-label="Menu">
-        ☰
-    </button>
-
-
-    <nav>
-
-        <a href="#home">Home</a>
-
-        <a href="#about">About</a>
-
-        <a href="#services">Services</a>
-
-        <a href="#history">History</a>
-
-        <a href="#ministries">Ministries</a>
-
-        <a href="#gallery">Gallery</a>
-
-        <a href="#give">Give</a>
-
-        <a href="#contact">Contact</a>
-
-    </nav>
-
-</header>
-
-
-<main>
-
-
-<!-- =====================================================
-     HERO
-     ===================================================== -->
-
-<section id="home" class="hero">
-
-    <div class="hero-bg"></div>
-
-
-    <!-- Decorative floating crosses -->
-
-    <span class="floating-cross cross-one">✝</span>
-
-    <span class="floating-cross cross-two">✝</span>
-
-    <span class="floating-cross cross-three">✝</span>
-
-
-    <div class="hero-content">
-
-
-        <div class="welcome-badge">
-
-            <span class="welcome-dot"></span>
-
-            WELCOME TO OUR CHURCH
-
-        </div>
-
-
-        <div class="eyebrow">
-            MASENO SOUTH DIOCESE
-        </div>
-
-
-        <h1 id="heroTitle">
-            WELCOME TO ACK OKOYO CHURCH
-        </h1>
-
-
-        <p id="heroSubtitle">
-            A Christ-centred family serving God and community.
-        </p>
-
-
-        <div class="actions">
-
-            <a class="btn primary" href="#services">
-                View Order of Service
-            </a>
-
-            <a class="btn ghost" href="#give">
-                Give / Tithe
-            </a>
-
-        </div>
-
-
-        <div class="verse">
-
-            “God loves a cheerful giver.”
-
-            <b>
-                — 2 Corinthians 9:7
-            </b>
-
-        </div>
-
-
-        <div class="live-indicator">
-
-            <span class="live-dot"></span>
-
-            Worship • Fellowship • Service • Community
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     QUICK INFORMATION - EXISTING
-     ===================================================== -->
-
-<section class="quick">
-
-    <div>
-
-        <span>📍</span>
-
-        <b>Location</b>
-
-        <small>
-            Oluti Village, Seme Constituency
-        </small>
-
-    </div>
-
-
-    <div>
-
-        <span>⛪</span>
-
-        <b>Diocese</b>
-
-        <small>
-            Maseno South Diocese
-        </small>
-
-    </div>
-
-
-    <div>
-
-        <span>🕊️</span>
-
-        <b>Worship</b>
-
-        <small>
-            Sunday services & weekly fellowship
-        </small>
-
-    </div>
-
-
-    <div>
-
-        <span>💚</span>
-
-        <b>Give</b>
-
-        <small>
-            PayBill <b>247247</b> • Account <b>291900</b>
-        </small>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     NEW FEATURED CHURCH MOMENTS
-     ===================================================== -->
-
-<section class="moments-section">
-
-    <div class="moments-title">
-
-        <div class="creative-label">
-            LIFE AT ACK OKOYO
-        </div>
-
-        <h2>
-            Faith in Action
-        </h2>
-
-        <p>
-            A church family growing together through worship,
-            prayer, fellowship, service and community.
-        </p>
-
-    </div>
-
-
-    <div class="moment-grid">
-
-
-        <article class="moment-card">
-
-            <img
-                src="assets/church-service.jpg"
-                alt="Church worship service"
-                loading="lazy"
-            >
-
-            <div class="moment-overlay">
-
-                <span>🙏</span>
-
-                <h3>Worship</h3>
-
-                <p>
-                    Gathering together to praise and worship God.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <article class="moment-card">
-
-            <img
-                src="assets/roofing.jpg"
-                alt="ACK Okoyo Church development"
-                loading="lazy"
-            >
-
-            <div class="moment-overlay">
-
-                <span>⛪</span>
-
-                <h3>Building Together</h3>
-
-                <p>
-                    Working together for the development of God's church.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <article class="moment-card">
-
-            <img
-                src="assets/church-service.jpg"
-                alt="Church fellowship"
-                loading="lazy"
-            >
-
-            <div class="moment-overlay">
-
-                <span>❤️</span>
-
-                <h3>Fellowship</h3>
-
-                <p>
-                    Sharing faith, friendship and Christian love.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <article class="moment-card">
-
-            <img
-                src="assets/roofing.jpg"
-                alt="Church community"
-                loading="lazy"
-            >
-
-            <div class="moment-overlay">
-
-                <span>🤝</span>
-
-                <h3>Community</h3>
-
-                <p>
-                    Serving people and making a difference together.
-                </p>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     ABOUT - EXISTING IDs PRESERVED
-     ===================================================== -->
-
-<section id="about" class="section">
-
-    <div class="section-head">
-
-        <span>WHO WE ARE</span>
-
-        <h2>
-            A church family rooted in Christ
-        </h2>
-
-        <p>
-            Welcome to ACK Okoyo Church. We exist to worship God,
-            grow disciples, care for one another and serve our community.
-        </p>
-
-    </div>
-
-
-    <div class="cards three">
-
-
-        <article class="card reveal">
-
-            <div class="icon">
-                ✝
-            </div>
-
-            <h3>
-                Our Mission
-            </h3>
-
-            <p id="mission">
-                To proclaim Christ, nurture faithful disciples
-                and serve our community.
-            </p>
-
-        </article>
-
-
-        <article class="card reveal">
-
-            <div class="icon">
-                👁
-            </div>
-
-            <h3>
-                Our Vision
-            </h3>
-
-            <p id="vision">
-                A growing, united and Christ-centred church
-                transforming lives.
-            </p>
-
-        </article>
-
-
-        <article class="card reveal">
-
-            <div class="icon">
-                🤝
-            </div>
-
-            <h3>
-                Our Values
-            </h3>
-
-            <p>
-                Faith • Love • Integrity • Service • Unity •
-                Compassion • Hope
-            </p>
-
-        </article>
-
-
-    </div>
-
-
-    <!-- NEW PILLARS -->
-
-    <div class="pillars">
-
-
-        <div class="pillar">
-
-            <div class="pillar-icon">
-                🙏
-            </div>
-
-            <h3>
-                Prayer
-            </h3>
-
-            <p>
-                Seeking God's guidance together.
-            </p>
-
-        </div>
-
-
-        <div class="pillar">
-
-            <div class="pillar-icon">
-                📖
-            </div>
-
-            <h3>
-                God's Word
-            </h3>
-
-            <p>
-                Growing through Scripture and teaching.
-            </p>
-
-        </div>
-
-
-        <div class="pillar">
-
-            <div class="pillar-icon">
-                ❤️
-            </div>
-
-            <h3>
-                Love
-            </h3>
-
-            <p>
-                Caring for one another and our neighbours.
-            </p>
-
-        </div>
-
-
-        <div class="pillar">
-
-            <div class="pillar-icon">
-                🤲
-            </div>
-
-            <h3>
-                Service
-            </h3>
-
-            <p>
-                Using our gifts to serve God and community.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     SCRIPTURE SECTION
-     ===================================================== -->
-
-<section class="scripture-section">
-
-    <div class="scripture-icon">
-        ✝
-    </div>
-
-    <blockquote>
-        “I was glad when they said unto me,
-        Let us go into the house of the LORD.”
-    </blockquote>
-
-    <div class="scripture-reference">
-        Psalm 122:1
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CHURCH STATS
-     ===================================================== -->
-
-<div class="church-stats">
-
-
-    <div class="stat">
-
-        <div class="stat-number">
-            ✝
-        </div>
-
-        <div class="stat-label">
-            Faith
-        </div>
-
-    </div>
-
-
-    <div class="stat">
-
-        <div class="stat-number">
-            🙏
-        </div>
-
-        <div class="stat-label">
-            Prayer
-        </div>
-
-    </div>
-
-
-    <div class="stat">
-
-        <div class="stat-number">
-            ❤️
-        </div>
-
-        <div class="stat-label">
-            Fellowship
-        </div>
-
-    </div>
-
-
-    <div class="stat">
-
-        <div class="stat-number">
-            🤝
-        </div>
-
-        <div class="stat-label">
-            Service
-        </div>
-
-    </div>
-
-
-</div>
-
-
-<!-- =====================================================
-     SERVICES - IMPORTANT EXISTING ELEMENT PRESERVED
-     ===================================================== -->
-
-<section id="services" class="section alt">
-
-    <div class="section-head">
-
-        <span>WORSHIP WITH US</span>
-
-        <h2>
-            Order of Service
-        </h2>
-
-        <p>
-            The latest published service programme appears here.
-            Church leaders can update it from the admin dashboard.
-        </p>
-
-    </div>
-
-
-    <!-- DO NOT CHANGE THIS ID.
-         app.js may use it. -->
-
-    <div id="servicesGrid" class="service-grid"></div>
-
-</section>
-
-
-<!-- =====================================================
-     EVENTS / FELLOWSHIP
-     ===================================================== -->
-
-<section class="events-section">
-
-    <div class="events-container">
-
-        <div class="section-head">
-
-            <span>CHURCH LIFE</span>
-
-            <h2>
-                Worship & Fellowship
-            </h2>
-
-            <p>
-                Stay connected with the life of the church.
-            </p>
-
-        </div>
-
-
-        <div class="event-card">
-
-            <div class="event-icon">
-                ⛪
-            </div>
-
-            <div>
-
-                <h3>
-                    Sunday Worship
-                </h3>
-
-                <p>
-                    Come together for worship, prayer,
-                    teaching and fellowship.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="event-card">
-
-            <div class="event-icon">
-                📖
-            </div>
-
-            <div>
-
-                <h3>
-                    Bible Fellowship
-                </h3>
-
-                <p>
-                    Growing deeper in God's Word and faith.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="event-card">
-
-            <div class="event-icon">
-                🙏
-            </div>
-
-            <div>
-
-                <h3>
-                    Prayer & Outreach
-                </h3>
-
-                <p>
-                    Seeking God and reaching out to our community.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="event-card">
-
-            <div class="event-icon">
-                👨‍👩‍👧‍👦
-            </div>
-
-            <div>
-
-                <h3>
-                    Family Fellowship
-                </h3>
-
-                <p>
-                    Building strong Christian families and relationships.
-                </p>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     HISTORY - EXISTING
-     ===================================================== -->
-
-<section id="history" class="section">
-
-    <div class="split">
-
-
-        <div>
-
-            <div class="section-head left">
-
-                <span>
-                    OUR STORY
-                </span>
-
-                <h2>
-                    History of ACK Okoyo Church
-                </h2>
-
-            </div>
-
-             <div id="historyText">
-
-    <h3>The History of Seme and Our Community</h3>
-
-    <p>
-        The story of Seme is a rich history of ancestry, migration,
-        settlement, family, friendship, marriage and community. Over
-        generations, different families and communities travelled,
-        settled and became connected to one another.
-    </p>
-
-    <h4>Kagumba and Kadipir</h4>
-
-    <p>
-        Traditional history associates two major ancestral groupings
-        with Seme: Kagumba and Kadipir. The traditional genealogy
-        traces these groupings to the wider family of Odongo, Gumba
-        and Dipir.
-    </p>
-
-    <h4>Migration and Settlement</h4>
-
-    <p>
-        The movement of families across different parts of the region
-        played an important role in shaping Seme. Different families
-        arrived through different routes and became part of the wider
-        community through settlement, family relationships, friendship
-        and marriage.
-    </p>
-
-    <h4>A Community of Many Histories</h4>
-
-    <p>
-        The history of Seme is therefore a story of many journeys.
-        Different families and communities contributed to the rich
-        cultural heritage of the area.
-    </p>
-
-    <h4>Our Heritage</h4>
-
-    <p>
-        ACK Okoyo Church is part of this wider community heritage.
-        As a church family, we recognise the importance of remembering
-        our history, respecting our communities and building a future
-        founded on faith, love, unity and service.
-    </p>
-
-</div>
-            
-
-
-            <div class="timeline">
-
-
-                <div>
-
-                    <b>
-                        Anglican identity
-                    </b>
-
-                    <p>
-                        Part of the Anglican Church of Kenya
-                        and the wider Diocese of Maseno South.
-                    </p>
-
-                </div>
-
-
-                <div>
-
-                    <b>
-                        Community & fellowship
-                    </b>
-
-                    <p>
-                        A place for worship, Christian formation,
-                        prayer and service in Oluti Village.
-                    </p>
-
-                </div>
-
-
-                <div>
-
-                    <b>
-                        Building for the future
-                    </b>
-
-                    <p>
-                        The church continues to develop its facilities
-                        and strengthen ministry for future generations.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-        <img
-            class="story-img"
-            src="assets/roofing.jpg"
-            alt="ACK Okoyo Church building project"
-            loading="lazy"
-        >
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PHOTO STRIP
-     ===================================================== -->
-
-<div class="photo-strip">
-
-    <img
-        src="assets/church-service.jpg"
-        alt="ACK Okoyo Church worship"
-        loading="lazy"
-    >
-
-    <img
-        src="assets/roofing.jpg"
-        alt="ACK Okoyo Church development"
-        loading="lazy"
-    >
-
-    <img
-        src="assets/church-service.jpg"
-        alt="Church fellowship"
-        loading="lazy"
-    >
-
-    <img
-        src="assets/roofing.jpg"
-        alt="Church community"
-        loading="lazy"
-    >
-
-</div>
-
-
-<!-- =====================================================
-     MINISTRIES - EXISTING SECTION PRESERVED
-     ===================================================== -->
-
-<section id="ministries" class="section dark">
-
-    <div class="section-head">
-
-        <span>
-            GET INVOLVED
-        </span>
-
-        <h2>
-            Ministries & fellowship
-        </h2>
-
-        <p>
-            Use this space to showcase the groups and ministries
-            active in the parish.
-        </p>
-
-    </div>
-
-
-    <div class="cards four">
-
-
-        <article>
-
-            <span>
-                👨‍👩‍👧‍👦
-            </span>
-
-            <h3>
-                Family Ministry
-            </h3>
-
-            <p>
-                Strengthening Christian homes and relationships.
-            </p>
-
-        </article>
-
-
-        <article>
-
-            <span>
-                🧑‍🎓
-            </span>
-
-            <h3>
-                Youth
-            </h3>
-
-            <p>
-                Faith, mentorship, leadership and fellowship
-                for young people.
-            </p>
-
-        </article>
-
-
-        <article>
-
-            <span>
-                👧
-            </span>
-
-            <h3>
-                Children
-            </h3>
-
-            <p>
-                Helping children know and love Christ.
-            </p>
-
-        </article>
-
-
-        <article>
-
-            <span>
-                🙏
-            </span>
-
-            <h3>
-                Prayer & Outreach
-            </h3>
-
-            <p>
-                Prayer, evangelism and practical service
-                to the community.
-            </p>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PRAYER SECTION
-     ===================================================== -->
-
-<section class="prayer-section">
-
-    <div class="prayer-box">
-
-
-        <div class="prayer-content">
-
-            <div class="prayer-icon-large">
-                🙏
-            </div>
-
-            <h2>
-                Let us pray together
-            </h2>
-
-            <p>
-                Whether you are celebrating a blessing,
-                facing a challenge or simply seeking God's
-                presence, prayer connects us as a church family.
-            </p>
-
-            <p>
-                You can use the contact section below
-                to send a prayer request.
-            </p>
-
-            <a
-                href="#contact"
-                class="btn primary"
-            >
-                Send Prayer Request
-            </a>
-
-        </div>
-
-
-        <div class="prayer-side">
-
-            <div class="prayer-side-inner">
-
-                <div style="font-size:45px;">
-                    🕊️
-                </div>
-
-                <h3>
-                    “Be still, and know that I am God.”
-                </h3>
-
-                <p>
-                    Psalm 46:10
-                </p>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     GALLERY - IMPORTANT EXISTING ID PRESERVED
-     ===================================================== -->
-
-<section id="gallery" class="section">
-
-    <div class="section-head">
-
-        <span>
-            PICTURIALS
-        </span>
-
-        <h2>
-            Church gallery
-        </h2>
-
-        <p>
-            Moments from worship, ministry, building and church life.
-        </p>
-
-    </div>
-
-
-    <!-- DO NOT CHANGE THIS ID.
-         app.js may populate it. -->
-
-    <div id="galleryGrid" class="gallery"></div>
-
-</section>
-
-
-<!-- =====================================================
-     GIVING - EXISTING FUNCTIONALITY PRESERVED
-     ===================================================== -->
-
-<section id="give" class="section give">
-
-    <div class="give-card">
-
-
-        <div>
-
-            <div class="section-head left">
-
-                <span>
-                    GIVE WITH FAITH
-                </span>
-
-                <h2>
-                    Tithes, offerings & thanksgiving
-                </h2>
-
-                <p>
-                    Your giving supports worship, ministry,
-                    outreach and church development.
-                </p>
-
-            </div>
-
-
-            <div class="mpesa">
-
-
-                <div class="mpesa-logo">
-                    M-PESA
-                </div>
-
-
-                <div>
-
-                    <small>
-                        CHURCH PAYBILL
-                    </small>
-
-                    <!-- EXISTING ID PRESERVED -->
-
-                    <strong id="paybill">
-                        247247
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <small>
-                        ACCOUNT NUMBER
-                    </small>
-
-                    <!-- EXISTING ID PRESERVED -->
-
-                    <strong id="account">
-                        291900
-                    </strong>
-
-                </div>
-
-
-                <button
-                    class="copy"
-                    data-copy="247247"
-                >
-                    Copy PayBill
-                </button>
-
-
-                <button
-                    class="copy"
-                    data-copy="291900"
-                >
-                    Copy Account
-                </button>
-
-
-            </div>
-
-
-            <p class="note">
-
-                On M-Pesa:
-
-                <b>
-                    Lipa na M-Pesa → Pay Bill → 247247 →
-                    Account 291900
-                </b>.
-
-                Keep your M-Pesa confirmation message
-                as your receipt.
-
-            </p>
-
-        </div>
-
-
-        <!-- EXISTING FORM PRESERVED -->
-
-        <form id="givingForm" class="form">
-
-            <h3>
-                Record your giving
-            </h3>
-
-
-            <input
-                name="name"
-                placeholder="Name (optional)"
-            >
-
-
-            <input
-                name="phone"
-                placeholder="Phone number (optional)"
-            >
-
-
-            <input
-                name="amount"
-                type="number"
-                min="1"
-                step="1"
-                placeholder="Amount (KSh)"
-                required
-            >
-
-
-            <select name="purpose">
-
-                <option>
-                    Offering
-                </option>
-
-                <option>
-                    Tithe
-                </option>
-
-                <option>
-                    Thanksgiving
-                </option>
-
-                <option>
-                    Building Project
-                </option>
-
-                <option>
-                    Mission / Outreach
-                </option>
-
-            </select>
-
-
-            <input
-                name="reference"
-                placeholder="M-Pesa reference (after payment)"
-            >
-
-
-            <button
-                class="btn primary"
-                type="submit"
-            >
-                Submit Giving Record
-            </button>
-
-
-            <!-- EXISTING ID PRESERVED -->
-
-            <p
-                id="givingMsg"
-                class="form-msg"
-            ></p>
-
-        </form>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CONTACT - EXISTING FUNCTIONALITY PRESERVED
-     ===================================================== -->
-
-<section id="contact" class="section contact">
-
-
-    <div class="section-head">
-
-        <span>
-            CONNECT
-        </span>
-
-        <h2>
-            Contact & visit us
-        </h2>
-
-        <p>
-            Have a prayer request, ministry question
-            or church announcement? Send a message.
-        </p>
-
-    </div>
-
-
-    <div class="contact-grid">
-
-
-        <!-- EXISTING FORM -->
-
-        <form
-            id="contactForm"
-            class="form"
-        >
-
-            <input
-                name="name"
-                placeholder="Your name"
-                required
-            >
-
-
-            <input
-                name="email"
-                type="email"
-                placeholder="Email"
-            >
-
-
-            <input
-                name="phone"
-                placeholder="Phone"
-            >
-
-
-            <textarea
-                name="message"
-                rows="6"
-                placeholder="Your message / prayer request"
-                required
-            ></textarea>
-
-
-            <button
-                class="btn primary"
-            >
-                Send Message
-            </button>
-
-
-            <!-- EXISTING ID PRESERVED -->
-
-            <p
-                id="contactMsg"
-                class="form-msg"
-            ></p>
-
-        </form>
-
-
-        <div class="map-card">
-
-
-            <div class="map-pin">
-                📍
-            </div>
-
-
-            <h3>
-                ACK Okoyo Church
-            </h3>
-
-
-            <p>
-                Oluti Village
-                <br>
-                Seme Constituency
-                <br>
-                Kisumu County, Kenya
-            </p>
-
-
-            <!-- EXISTING MAP LINK PRESERVED -->
-
-            <a
-                class="btn ghost darkbtn"
-                href="https://www.google.com/maps/search/?api=1&query=ACK+Okoyo+Church+Kisumu"
-                target="_blank"
-                rel="noreferrer"
-            >
-                Open in Google Maps
-            </a>
-
-
-            <!-- EXISTING YOUTUBE ELEMENT PRESERVED -->
-
-            <a
-                class="youtube"
-                id="youtube"
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-            >
-                ▶ Watch on YouTube
-            </a>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-</main>
-
-
-<!-- =====================================================
-     FLOATING QUICK ACTIONS
-     ===================================================== -->
-
-<div class="floating-actions">
-
-
-    <a
-        class="floating-action"
-        href="#home"
-        title="Home"
-        aria-label="Home"
-    >
-        🏠
-    </a>
-
-
-    <a
-        class="floating-action"
-        href="#give"
-        title="Give"
-        aria-label="Give"
-    >
-        💚
-    </a>
-
-
-    <a
-        class="floating-action"
-        href="#contact"
-        title="Prayer / Contact"
-        aria-label="Prayer and Contact"
-    >
-        🙏
-    </a>
-
-
-</div>
-<div class="map-card">
-
-    <div class="map-pin">
-        📍
-    </div>
-
-    <h3>
-        ACK Okoyo Church
-    </h3>
-
-    <p>
-        Oluti Village
-        <br>
-        Seme Constituency
-        <br>
-        Kisumu County, Kenya
-    </p>
-
-    <!-- PHONE CONTACT -->
-    <p>
-        📞
-        <strong>Phone:</strong>
-        <a href="tel:+254740520931">
-            +254 740 520 931
-        </a>
-    </p>
-
-    <!-- EMAIL CONTACT -->
-    <p>
-        ✉️
-        <strong>Email:</strong>
-        <a href="mailto:mckemckeeverliam45@gmail.com">
-            mckemckeeverliam45@gmail.com
-        </a>
-    </p>
-
-    <!-- EXISTING GOOGLE MAPS LINK - DO NOT CHANGE -->
-    <a
-        class="btn ghost darkbtn"
-        href="https://www.google.com/maps/search/?api=1&query=ACK+Okoyo+Church+Kisumu"
-        target="_blank"
-        rel="noreferrer"
-    >
-        Open in Google Maps
-    </a>
-
-    <!-- EXISTING YOUTUBE ELEMENT - DO NOT CHANGE -->
-    <a
-        class="youtube"
-        id="youtube"
-        href="#"
-        target="_blank"
-        rel="noreferrer"
-    >
-        ▶ Watch on YouTube
-    </a>
-
-</div>
-
-
-<!-- =====================================================
-     FOOTER - EXISTING STRUCTURE PRESERVED
-     ===================================================== -->
-
-<footer>
-
-
-    <div class="footer-main">
-
-
-        <div class="brand">
-
-            <span class="cross">
-                ✝
-            </span>
-
-            <span>
-
-                <b>
-                    ACK OKOYO
-                </b>
-
-                <small>
-                    CHURCH
-                </small>
-
-            </span>
-
-        </div>
-
-
-        <p>
-            Faith • Fellowship • Service
-        </p>
-
-
-        <div class="social">
-            f &nbsp; ▶ &nbsp; ◎
-        </div>
-
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        ©
-
-        <span id="year"></span>
-
-        ACK Okoyo Church.
-        All rights reserved.
-
-        <a href="/admin.html">
-            Church Admin
-        </a>
-
-    </div>
-
-
-</footer>
-
-
-<!-- =====================================================
-     EXISTING JAVASCRIPT - DO NOT CHANGE
-     ===================================================== -->
-
-<script src="app.js"></script>
-
-
-</body>
-</html>
