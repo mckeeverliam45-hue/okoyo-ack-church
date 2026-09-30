@@ -9,3 +9,147 @@
 .service-block ul{margin-top:8px}
 .muted-note{font-size:13px;font-style:italic;color:var(--muted)}
 @media(max-width:700px){.service-grid{grid-template-columns:1fr}}
+/* =====================================================
+   ACK OKOYO CHURCH - BEAUTIFUL HISTORY SECTION
+   ===================================================== */
+
+#history {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    padding: 90px 20px;
+    background: #f5f1e8;
+}
+
+/* Background image layer */
+#history::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    /* Jesus/church background image */
+    background-image: url("assets/jesus.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Blur the background */
+    filter: blur(7px);
+
+    /* Make image slightly larger so blurred edges don't show */
+    transform: scale(1.08);
+
+    z-index: -2;
+}
+
+/* Dark/soft overlay over the image */
+#history::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(20, 25, 35, 0.58);
+
+    z-index: -1;
+}
+
+/* Keep the history content above the background */
+#history > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* History heading */
+#history .section-heading {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 40px;
+    color: white;
+}
+
+#history .section-heading span {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#history .section-heading h2 {
+    font-size: 42px;
+    margin: 15px 0;
+    color: white;
+}
+
+#history .section-heading p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* Main history card */
+#history .history-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 35px;
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.91);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.30);
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* History text */
+#history #historyText {
+    color: #333;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+/* Headings inside history */
+#history #historyText h1,
+#history #historyText h2,
+#history #historyText h3,
+#history #historyText h4 {
+    color: #17365d;
+    margin-top: 25px;
+}
+
+/* Paragraphs */
+#history #historyText p {
+    margin-bottom: 18px;
+}
+
+/* Highlight important text */
+#history #historyText strong {
+    color: #17365d;
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+
+    #history {
+        padding: 60px 15px;
+    }
+
+    #history .section-heading h2 {
+        font-size: 32px;
+    }
+
+    #history .history-card {
+        padding: 22px;
+        border-radius: 18px;
+    }
+
+    #history #historyText {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+}
