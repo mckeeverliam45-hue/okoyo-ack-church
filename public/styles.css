@@ -153,3 +153,380 @@
         line-height: 1.8;
     }
 }
+```css
+/* =========================================================
+   ACK OKOYO CHURCH
+   PROFESSIONAL MOVING PHOTO MARQUEE
+   Add this at the END of styles.css
+   ========================================================= */
+
+.okoyo-photo-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 75px 0 80px;
+    background:
+        linear-gradient(
+            135deg,
+            #f8f4eb 0%,
+            #ffffff 50%,
+            #eef5f2 100%
+        );
+}
+
+
+/* ---------------------------------------------------------
+   TOP DECORATION
+   --------------------------------------------------------- */
+
+.okoyo-photo-marquee::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100px;
+    height: 4px;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    background: currentColor;
+}
+
+
+/* ---------------------------------------------------------
+   HEADING
+   --------------------------------------------------------- */
+
+.okoyo-marquee-heading {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 42px;
+}
+
+.okoyo-gallery-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 15px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    font-size: 27px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.okoyo-marquee-heading h2 {
+    margin: 0 0 10px;
+
+    font-size: clamp(2rem, 5vw, 3rem);
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+.okoyo-marquee-heading p {
+    margin: 0;
+
+    font-size: 1rem;
+
+    opacity: 0.72;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ---------------------------------------------------------
+   MARQUEE VIEWPORT
+   --------------------------------------------------------- */
+
+.okoyo-marquee-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   FADE EFFECT ON LEFT AND RIGHT
+   --------------------------------------------------------- */
+
+.okoyo-marquee-wrapper::before,
+.okoyo-marquee-wrapper::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    width: 100px;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+.okoyo-marquee-wrapper::before {
+    left: 0;
+
+    background:
+        linear-gradient(
+            to right,
+            rgba(248, 244, 235, 1),
+            rgba(248, 244, 235, 0)
+        );
+}
+
+.okoyo-marquee-wrapper::after {
+    right: 0;
+
+    background:
+        linear-gradient(
+            to left,
+            rgba(238, 245, 242, 1),
+            rgba(238, 245, 242, 0)
+        );
+}
+
+
+/* ---------------------------------------------------------
+   MOVING TRACK
+   --------------------------------------------------------- */
+
+.okoyo-marquee-track {
+    display: flex;
+
+    width: max-content;
+
+    gap: 24px;
+
+    animation:
+        okoyoPhotoMovement 38s linear infinite;
+
+    will-change: transform;
+}
+
+
+/* ---------------------------------------------------------
+   PHOTO CARD
+   --------------------------------------------------------- */
+
+.okoyo-photo-card {
+    position: relative;
+
+    flex: 0 0 310px;
+
+    height: 215px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #ddd;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.16);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* ---------------------------------------------------------
+   IMAGE
+   --------------------------------------------------------- */
+
+.okoyo-photo-card img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+
+/* ---------------------------------------------------------
+   DARK GRADIENT
+   --------------------------------------------------------- */
+
+.okoyo-photo-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.68),
+            rgba(0, 0, 0, 0.05) 60%,
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   PHOTO TEXT
+   --------------------------------------------------------- */
+
+.okoyo-photo-overlay {
+    position: absolute;
+
+    left: 20px;
+    right: 20px;
+    bottom: 17px;
+
+    z-index: 2;
+
+    color: white;
+
+    font-size: 0.95rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* ---------------------------------------------------------
+   HOVER EFFECT
+   --------------------------------------------------------- */
+
+.okoyo-photo-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.24);
+}
+
+.okoyo-photo-card:hover img {
+    transform: scale(1.09);
+
+    filter: brightness(1.05);
+}
+
+
+/* ---------------------------------------------------------
+   MOVEMENT
+   --------------------------------------------------------- */
+
+@keyframes okoyoPhotoMovement {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 12px));
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   PAUSE WHEN MOUSE IS OVER MARQUEE
+   --------------------------------------------------------- */
+
+.okoyo-marquee-wrapper:hover .okoyo-marquee-track {
+    animation-play-state: paused;
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .okoyo-photo-card {
+        flex: 0 0 270px;
+        height: 190px;
+    }
+
+    .okoyo-marquee-track {
+        gap: 18px;
+        animation-duration: 32s;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .okoyo-photo-marquee {
+        padding: 55px 0 60px;
+    }
+
+    .okoyo-marquee-heading {
+        margin-bottom: 30px;
+    }
+
+    .okoyo-marquee-heading h2 {
+        font-size: 1.8rem;
+    }
+
+    .okoyo-marquee-heading p {
+        font-size: 0.88rem;
+    }
+
+    .okoyo-photo-card {
+        flex: 0 0 225px;
+        height: 155px;
+        border-radius: 15px;
+    }
+
+    .okoyo-marquee-track {
+        gap: 15px;
+        animation-duration: 27s;
+    }
+
+    .okoyo-photo-overlay {
+        left: 14px;
+        right: 14px;
+        bottom: 13px;
+        font-size: 0.82rem;
+    }
+
+    .okoyo-marquee-wrapper::before,
+    .okoyo-marquee-wrapper::after {
+        width: 45px;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   ACCESSIBILITY
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .okoyo-marquee-track {
+        animation: none;
+    }
+
+}
+
+
